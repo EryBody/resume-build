@@ -44,7 +44,6 @@ public class MailSender {
         properties.put("mail.smtp.host", prop.getProperty("SMTP_HOST"));
         properties.put("mail.smtp.auth", prop.getProperty("SMTP_AUTH"));
         properties.put("mail.smtp.starttls.enable", prop.getProperty("STAR_ENABLE"));
-        properties.put("mail.smtp.ssl.trust", prop.getProperty("SSL_TRUST"));
         properties.put("mail.smtp.port", prop.getProperty("SMTP_PORT"));
 
         String myAccountEmail = prop.getProperty("EMAIL");

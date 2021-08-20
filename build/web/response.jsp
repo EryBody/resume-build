@@ -15,7 +15,7 @@
     <body>
         <div class="resume">
             <div class="card card-body">
-                <h3 style="color: #fff">Your Request has been sent successfully, Please kindly check your Mail</h3>
+                <h3 style="color: #fff">Your Request has been sent successfully, Thank you</h3>
                 <br/>
                 <a href="index.jsp"><button type="button" class="btn" style="background-color: #301934; color: #fff">Go Back</button></a>
             </div>

@@ -7,6 +7,8 @@ package model;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,18 +41,23 @@ public class SendEmailAction extends HttpServlet {
             String email = request.getParameter("email");
             String subject = request.getParameter("subject");
             String message = request.getParameter("message");
+            String entryDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
             
 //            out.print(name);
 //            out.print(email);
 //            out.print(subject);
 //            out.print(message);
 
-            getServletContext().getRequestDispatcher("/response.jsp").forward(request, response);
-                
+            RegisterBean bean = new RegisterBean(0,email,name,subject,message,entryDate);
+            int status = new RegisterDAO().addUser(bean);
             
+            if(status == 0){
+                request.getRequestDispatcher("/response.jsp").forward(request, response);
+            }else{
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

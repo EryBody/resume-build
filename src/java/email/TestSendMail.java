@@ -14,7 +14,6 @@ import javax.mail.MessagingException;
 public class TestSendMail {
     public static void main(String[] args) throws MessagingException {
         EmailCompositeBean bean = new EmailCompositeBean();
-         
         bean.setName("Ekwere Precious");      
         
         MailSender jma = new MailSender();
