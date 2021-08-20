@@ -218,7 +218,7 @@
                     </ul>
                 </div>
                 <br/>
-                <img src="brand-logo.png" alt="HNG Intership" width="80%"/>
+                <a href="https://internship.zuri.team/enrollment" target="_blank"><img src="brand-logo.png" alt="HNG Intership" width="80%"/></a>
                 <form action="SendEmailAction" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>

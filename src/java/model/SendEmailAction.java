@@ -43,19 +43,21 @@ public class SendEmailAction extends HttpServlet {
             String message = request.getParameter("message");
             String entryDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
             
+            
+            request.getRequestDispatcher("/response.jsp").forward(request, response);
 //            out.print(name);
 //            out.print(email);
 //            out.print(subject);
 //            out.print(message);
 
-            RegisterBean bean = new RegisterBean(0,email,name,subject,message,entryDate);
-            int status = new RegisterDAO().addUser(bean);
-            
-            if(status == 0){
-                request.getRequestDispatcher("/response.jsp").forward(request, response);
-            }else{
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
-            }
+//            RegisterBean bean = new RegisterBean(0,email,name,subject,message,entryDate);
+//            int status = new RegisterDAO().addUser(bean);
+//            
+//            if(status == 0){
+//                request.getRequestDispatcher("/response.jsp").forward(request, response);
+//            }else{
+//                request.getRequestDispatcher("/index.jsp").forward(request, response);
+//            }
         }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
