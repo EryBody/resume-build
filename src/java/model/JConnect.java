@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class JConnect {
 
-    public Connection getNewConnection() {
+    public Connection getConnection() {
 
         Connection conn = null;
         String username = "";
@@ -46,7 +46,7 @@ public class JConnect {
         return conn;
     }
 
-    public Connection getConnection() {
+    public Connection getNewConnection() {
 
         Connection conn = null;
         String connectionString = "jdbc:mysql://localhost:3306/resume_build_db";
