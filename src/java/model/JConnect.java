@@ -48,10 +48,15 @@ public class JConnect {
 
     public Connection getNewConnection() {
 
+//        Connection conn = null;
+//        String connectionString = "jdbc:mysql://localhost:3306/resume_build_db";
+//        String driver = "com.mysql.jdbc.Driver";
+//        String username = "root", password = "password";
+        
         Connection conn = null;
-        String connectionString = "jdbc:mysql://localhost:3306/resume_build_db";
+        String connectionString = "jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/resume_build_db";
         String driver = "com.mysql.jdbc.Driver";
-        String username = "root", password = "password";
+        String username = "bd3903ab5eada6", password = "d9217b36";
 
         try {
             Class.forName(driver).newInstance();
