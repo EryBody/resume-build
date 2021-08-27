@@ -42,23 +42,16 @@ public class SendEmailAction extends HttpServlet {
             String subject = request.getParameter("subject");
             String message = request.getParameter("message");
             String entryDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-            
-            
-            request.getRequestDispatcher("/response.jsp").forward(request, response);
-//            out.print(name);
-//            out.print(email);
-//            out.print(subject);
-//            out.print(message);
 
-//            RegisterBean bean = new RegisterBean(0,email,name,subject,message,entryDate);
-//            int status = new RegisterDAO().addUser(bean);
-//            
-//            if(status == 0){
-//                request.getRequestDispatcher("/response.jsp").forward(request, response);
-//            }else{
-//                request.getRequestDispatcher("/index.jsp").forward(request, response);
-//            }
-
+            //todo: Send Mail Action
+            //Add Record to Register Table
+            RegisterBean bean = new RegisterBean(0,email,name,subject,message,entryDate);
+            int status = new RegisterDAO().addUser(bean);
+            if(status == 0){
+                request.getRequestDispatcher("/response.jsp").forward(request, response);
+            }else{
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
         }
         catch(Exception ex){
             ex.printStackTrace();
@@ -103,3 +96,10 @@ public class SendEmailAction extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 }
+
+
+//            request.getRequestDispatcher("/response.jsp").forward(request, response);
+//            out.print(name);
+//            out.print(email);
+//            out.print(subject);
+//            out.print(message);

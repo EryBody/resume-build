@@ -19,33 +19,6 @@ import java.util.logging.Logger;
  */
 public class JConnect {
 
-    public Connection getConnection() {
-
-        Connection conn = null;
-        String username = "";
-        String password = "";
-        String port = "";
-        String jdbUrl = "";
-
-        try {
-            URI jdbUri = new URI(System.getenv("mysql://ys0syy3uh3vvd0xm:ldhpz3jv6xmmce10@tvcpw8tpu4jvgnnq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ngr5fyckqu30nm6q"));
-            username = jdbUri.getUserInfo().split(":")[0];
-            password = jdbUri.getUserInfo().split(":")[1];
-            port = String.valueOf(jdbUri.getPort());
-            jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
-
-            conn = DriverManager.getConnection(jdbUrl, username, password);
-        } catch (URISyntaxException ex) {
-            ex.printStackTrace();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        return conn;
-    }
-
     public Connection getNewConnection() {
 
         Connection conn = null;
@@ -74,7 +47,6 @@ public class JConnect {
     public static void main(String args[]) {
 
         JConnect connect = new JConnect();
-        System.out.println("Connection Instance: " + connect.getConnection());
         System.out.println("Connection Instance: " + connect.getNewConnection());
     }
 }
