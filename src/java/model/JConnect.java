@@ -21,7 +21,7 @@ public class JConnect {
 
     public Connection getNewConnection() {
 
-//        Local host connection String
+          //Localhost connection String
 //        Connection conn = null;
 //        String connectionString = "jdbc:mysql://localhost:3306/resume_build_db";
 //        String driver = "com.mysql.jdbc.Driver";
@@ -29,7 +29,7 @@ public class JConnect {
         
         //Server connection String
         Connection conn = null;
-        String connectionString = "jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/resume_build_db";
+        String connectionString = "jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_6035cdf5808c759";
         String driver = "com.mysql.jdbc.Driver";
         String username = "bd3903ab5eada6", password = "d9217b36";
 
